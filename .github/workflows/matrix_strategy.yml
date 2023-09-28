@@ -1,4 +1,4 @@
-name: Python Workflow for Sum Frequencies Application
+name: matrix_strategy
 on:
   workflow_dispatch:
   push:
