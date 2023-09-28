@@ -2,6 +2,9 @@ name: Basic Workflow Dispatch Example
 permissions:
   contents: write
 on:
+  push:
+      branches: 
+          - develop
   workflow_dispatch:
     inputs:
       environment:
