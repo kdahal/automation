@@ -14,8 +14,8 @@ jobs:
 
     - name: Set up Git
       run: |
-        git config --global user.name "kdahal"
-        git config --global user.email "kumar.dahal@outlook.com"
+        git config --global user.name "kdahal-vetera"
+        git config --global user.email "kdahal@ventera.com"
 
     - name: Generate release tag
       id: TAG
