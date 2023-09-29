@@ -1,0 +1,25 @@
+name: Custom
+on:
+
+ workflow_dispatch:
+    inputs:
+      environment:
+        description: 'The environment to deploy to'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - production
+          - qa
+          - dev
+      notify:
+        description: 'Should workflow notify team?'
+        required: true
+        type: boolean
+
+jobs:
+  main:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: kdahal-ventera/custom-action@main
