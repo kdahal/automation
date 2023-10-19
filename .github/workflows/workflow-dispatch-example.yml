@@ -37,9 +37,8 @@ jobs:
           git config --global user.email "kumar.dahal@outlook.com"
       - name: Generate release tag
         id: TAG
-        shell: bash
         run: |
-            echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
+            echo "hellow world"
       - name: Release user firmware
         uses: softprops/action-gh-release@v1
         env:
