@@ -1,6 +1,5 @@
 name: Basic Workflow Dispatch Example
-permissions:
-  contents: write
+
 on:
   workflow_dispatch:
     inputs:
@@ -20,7 +19,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -35,10 +34,11 @@ jobs:
         run: |
           git config --global user.name "kdahal"
           git config --global user.email "kumar.dahal@outlook.com"
+
       - name: Generate release tag
         id: TAG
         run: |
-            echo "hellow world"
+            echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
       - name: Release user firmware
         uses: softprops/action-gh-release@v1
         env:
